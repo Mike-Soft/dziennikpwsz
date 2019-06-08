@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel teścik
+                    test phpstorm
                 </div>
 
                 <div class="links">
