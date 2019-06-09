@@ -8,7 +8,7 @@
                     <div class="card-header">{{ __('Zarejestruj użytkownika') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}">
+                        <form method="POST" action="{{ route('users.store') }}">
                             @csrf
 
                             <div class="form-group row">
@@ -39,42 +39,69 @@
                                 </div>
                             </div>
 
+{{--                            <div class="form-group row">--}}
+{{--                                <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Rola') }}</label>--}}
+
+{{--                                <div class="col-md-6">--}}
+{{--                                    <select class="custom-select" id="role">--}}
+{{--                                        <option selected>wybierz</option>--}}
+{{--                                        <option value="student">Uczeń</option>--}}
+{{--                                        <option value="teacher">Nauczyciel</option>--}}
+{{--                                    </select>--}}
+{{--                                    </div>--}}
+
+
+{{--                                </div>--}}
+
+{{--                            <div class="form-group row">--}}
+{{--                                <label for="class" class="col-md-4 col-form-label text-md-right">{{ __('Klasa') }}</label>--}}
+
+{{--                                <div class="col-md-6">--}}
+{{--                                    <select class="custom-select" id="class">--}}
+{{--                                        <option selected>wybierz</option>--}}
+{{--                                        <option value="">Nauczyciel</option>--}}
+{{--                                        <option value="1a">1a</option>--}}
+{{--                                        <option value="1b">1b</option>--}}
+{{--                                        <option value="2a">2a</option>--}}
+{{--                                        <option value="2b">2b</option>--}}
+{{--                                        <option value="3a">3a</option>--}}
+{{--                                        <option value="3b">3b</option>--}}
+{{--                                        <option value="4a">4a</option>--}}
+{{--                                        <option value="4b">4b</option>--}}
+{{--                                    </select>--}}
+{{--                                </div>--}}
+
+
+{{--                            </div>--}}
+
+
                             <div class="form-group row">
-                                <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Rola') }}</label>
+                                <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Funkcja') }}</label>
 
                                 <div class="col-md-6">
-                                    <select class="custom-select" id="role">
-                                        <option selected>wybierz</option>
-                                        <option value="student">Uczeń</option>
-                                        <option value="teacher">Nauczyciel</option>
-                                    </select>
-                                    </div>
+                                    <input id="role" type="text" class="form-control @error('role') is-invalid @enderror" name="role" value="{{ old('role') }}" required autocomplete="role" autofocus>
 
-
+                                    @error('role')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
+                            </div>
 
                             <div class="form-group row">
                                 <label for="class" class="col-md-4 col-form-label text-md-right">{{ __('Klasa') }}</label>
 
                                 <div class="col-md-6">
-                                    <select class="custom-select" id="class">
-                                        <option selected>wybierz</option>
-                                        <option value="">Nauczyciel</option>
-                                        <option value="1a">1a</option>
-                                        <option value="1b">1b</option>
-                                        <option value="2a">2a</option>
-                                        <option value="2b">2b</option>
-                                        <option value="3a">3a</option>
-                                        <option value="3b">3b</option>
-                                        <option value="4a">4a</option>
-                                        <option value="4b">4b</option>
-                                    </select>
+                                    <input id="class" type="text" class="form-control @error('class') is-invalid @enderror" name="class" value="{{ old('class') }}" required autocomplete="class" autofocus>
+
+                                    @error('class')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
-
-
                             </div>
-
-
 
 
 
