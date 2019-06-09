@@ -1,4 +1,4 @@
-@extends('layouts.app')
+ @extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -8,9 +8,9 @@
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
-                    @if (session('status'))
+                    @if (auth()->user()->isAdmin())
                         <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+                            <a href="{{ route('users.index') }}">Zarządzaj użytkownikami</a>
                         </div>
                     @endif
 
