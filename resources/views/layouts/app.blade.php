@@ -18,7 +18,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+{{-- href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
 </head>
 <body>
     <div id="app">
