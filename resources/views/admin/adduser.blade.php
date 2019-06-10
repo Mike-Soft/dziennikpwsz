@@ -92,6 +92,18 @@
                                 </div>
                             </div>
 
+{{--                            <div class="input-group mb-3">--}}
+{{--                                <div class="input-group-prepend">--}}
+
+{{--                                </div>--}}
+{{--                                <select class="custom-select" id="role[]"  name="role[]" >--}}
+{{--                                    <option selected>Choose...</option>--}}
+{{--                                    <option value="admin">Admin</option>--}}
+{{--                                    <option value="teacher">Teacher</option>--}}
+{{--                                    <option value="student">Student</option>--}}
+{{--                                </select>--}}
+{{--                            </div>--}}
+
                             <div class="form-group row">
                                 <label for="class" class="col-md-4 col-form-label text-md-right">{{ __('Klasa') }}</label>
 
