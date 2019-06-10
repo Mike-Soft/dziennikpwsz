@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.adminapp')
 
 
-@section('content')
+@section('admincontent')
 
     <div class="container">
 
@@ -39,6 +39,8 @@
                             <td>{{ $user->role }}</td>
                             <td>{{ $user->class }}</td>
                             <td>{{ $user->parentmail }}</td>
+
+                            <td><a href="/users/{{ $user->id }}/edit"  class="btn btn-info">Edytuj</a></td>
 
                         </tr>
 
