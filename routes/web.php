@@ -21,3 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('users', 'UserController')->middleware('auth');
 Route::resource('grades', 'GradeController')->middleware('auth');
+
+Route::get('/users/{user}/delete', 'UserController@destroy')->middleware('auth');

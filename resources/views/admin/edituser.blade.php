@@ -99,7 +99,7 @@
                                 <label for="class" class="col-md-4 col-form-label text-md-right">{{ __('Klasa') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="class" type="text" class="form-control @error('class') is-invalid @enderror" name="class" value="{{ $user->class }}"  autofocus>
+                                    <input id="class" type="text" class="form-control @error('class') is-invalid @enderror" name="class" value="{{ $user->class }}" webwe autofocus>
 
                                     @error('class')
                                     <span class="invalid-feedback" role="alert">

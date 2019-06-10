@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 use Illuminate\View;
 
 class UserController extends Controller
@@ -16,8 +17,13 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return view('admin.index', compact('users'));
+        $users = DB::table('users')->orderBy('surname')->get();
+
+        return view('admin.index', ['users' => $users]);
+
+
+//        $users = User::all();
+//        return view('admin.index', compact('users'));
     }
 
     /**
@@ -66,6 +72,8 @@ class UserController extends Controller
 
         ]);
 
+
+
         return redirect(route('users.index'));
     }
 
@@ -108,15 +116,9 @@ class UserController extends Controller
         $user->name = $request['name'];
         $user->surname = $request['surname'];
         $user->role = $request['role'];
-        if ($request['class']) {
-            $user->class = $request['class'];
-        }
-
-
+        $user->class = $request['class'];
         $user->email = $request['email'];
-        if ($request['parentmail']) {
-            $user->parentmail = $request['parentmail'];
-        }
+        $user->parentmail = $request['parentmail'];
 
         if ($request['password']){
         $user->password = Hash::make($request['password']);
@@ -136,6 +138,8 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+
+        return redirect(route('users.index'));
     }
 }

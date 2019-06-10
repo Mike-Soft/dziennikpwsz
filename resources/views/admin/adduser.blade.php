@@ -96,7 +96,7 @@
                                 <label for="class" class="col-md-4 col-form-label text-md-right">{{ __('Klasa') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="class" type="text" class="form-control @error('class') is-invalid @enderror" name="class" value="{{ old('class') }}" required autocomplete="class" autofocus>
+                                    <input id="class" type="text" class="form-control @error('class') is-invalid @enderror" name="class" value="{{ old('class') }}"  autofocus>
 
                                     @error('class')
                                     <span class="invalid-feedback" role="alert">
@@ -111,7 +111,7 @@
 
 
                             <div class="form-group row">
-                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Adres E-mail ucznia') }}</label>
+                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Adres E-mail użytkownika') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -129,7 +129,7 @@
                                 <label for="parentmail" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail opiekuna') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="parentmail" type="email" class="form-control @error('email') is-invalid @enderror" name="parentmail" value="{{ old('email') }}" required autocomplete="email">
+                                    <input id="parentmail" type="email" class="form-control @error('email') is-invalid @enderror" name="parentmail" value="{{ old('email') }}" >
 
                                     @error('parentmail')
                                     <span class="invalid-feedback" role="alert">
@@ -174,6 +174,10 @@
                             </div>
 
                 </div>
+
+
+
+
                         </form>
                     </div>
                 </div>
