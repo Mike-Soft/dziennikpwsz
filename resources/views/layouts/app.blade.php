@@ -46,9 +46,9 @@
                             </li>
 
                             @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="">{{ __('Zarejestruj się') }}</a>
-                                </li>
+{{--                                <li class="nav-item">--}}
+{{--                                    <a class="nav-link" href="">{{ __('Zarejestruj się') }}</a>--}}
+{{--                                </li>--}}
                             @endif
 
                         @else
@@ -68,6 +68,11 @@
                                         @csrf
                                     </form>
                                 </div>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">{{ __('Wyloguj się') }}</a>
                             </li>
                         @endguest
                     </ul>
