@@ -81,36 +81,82 @@
                             {{--                            </div>--}}
 
 
-                            <div class="form-group row">
-                                <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Funkcja') }}</label>
+{{--                            <div class="form-group row">--}}
+{{--                                <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Funkcja') }}</label>--}}
 
-                                <div class="col-md-6">
-                                    <input id="role" type="text" class="form-control @error('role') is-invalid @enderror" name="role" value="{{ $user->role }}" required autocomplete="role" autofocus>
+{{--                                <div class="col-md-6">--}}
+{{--                                    <input id="role" type="text" class="form-control @error('role') is-invalid @enderror" name="role" value="{{ $user->role }}" required autocomplete="role" autofocus>--}}
 
-                                    @error('role')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
+{{--                                    @error('role')--}}
+{{--                                    <span class="invalid-feedback" role="alert">--}}
+{{--                                        <strong>{{ $message }}</strong>--}}
+{{--                                    </span>--}}
+{{--                                    @enderror--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+
+{{--                            <div class="form-group row">--}}
+{{--                                <label for="class" class="col-md-4 col-form-label text-md-right">{{ __('Klasa') }}</label>--}}
+
+{{--                                <div class="col-md-6">--}}
+{{--                                    <input id="class" type="text" class="form-control @error('class') is-invalid @enderror" name="class" value="{{ $user->class }}" webwe autofocus>--}}
+
+{{--                                    @error('class')--}}
+{{--                                    <span class="invalid-feedback" role="alert">--}}
+{{--                                        <strong>{{ $message }}</strong>--}}
+{{--                                    </span>--}}
+{{--                                    @enderror--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+
+
+                            <?php  $classes= App\Clas::all()  ?>
+
+                            <div class="form-group-row">
+
+
+
+                                <div >
+
+                                    <select name="class" id="class" class="form-control align-middle mb-4 col-md-7" >
+                                        <option selected value="{{ $user->class }}">{{ $user->class }}</option>
+                                        <option value="">Brak</option>
+                                        @foreach($classes as $class)
+
+
+
+                                            <option value="{{ $class->id }}">{{ $class->name }}</option>
+
+
+                                        @endforeach
+                                    </select>
+
+
+
                                 </div>
                             </div>
 
-                            <div class="form-group row">
-                                <label for="class" class="col-md-4 col-form-label text-md-right">{{ __('Klasa') }}</label>
+                            <div class="form-group-row">
 
-                                <div class="col-md-6">
-                                    <input id="class" type="text" class="form-control @error('class') is-invalid @enderror" name="class" value="{{ $user->class }}" webwe autofocus>
 
-                                    @error('class')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
+
+                                <div >
+
+                                    <select name="role" id="role" class="form-control align-middle mb-4 col-md-7" >
+                                        <option selected value="{{ $user->role }}">{{ $user->role }}</option>
+                                        <option value="">Brak</option>
+                                        <option value="admin">Admin</option>
+                                        <option value="teacher">Nauczyciel</option>
+                                        <option value="student">Uczeń</option>
+
+
+
+                                    </select>
+
+
+
                                 </div>
                             </div>
-
-
-
 
 
                             <div class="form-group row">

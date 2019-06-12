@@ -58,13 +58,15 @@
 
                             <?php  $classes= App\Clas::all()  ?>
 
-                            <div class="form-group">
-                                <label for="class" class="col-md-4 col-form-label text-md-right">{{ __('Klasa') }}</label>
+                            <div class="form-group-row">
 
 
-                                    <select name="class" id="class" class="form-control" >
 
-                                        <option value="">Nauczyciel</option>
+                                <div >
+
+                                    <select name="class" id="class" class="form-control align-middle mb-4 col-md-7" >
+                                        <option selected>Wybierz klasę</option>
+                                        <option value="">Brak</option>
                                         @foreach($classes as $class)
 
 
@@ -77,22 +79,44 @@
 
 
 
-                            </div>
-
-
-                            <div class="form-group row">
-                                <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Funkcja') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="role" type="text" class="form-control @error('role') is-invalid @enderror" name="role" value="{{ old('role') }}" required autocomplete="role" autofocus>
-
-                                    @error('role')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
                                 </div>
                             </div>
+
+                            <div class="form-group-row">
+
+
+
+                                <div >
+
+                                    <select name="role" id="role" class="form-control align-middle mb-4 col-md-7" >
+                                        <option selected>Wybierz Funkcję</option>
+                                        <option value="">Brak</option>
+                                        <option value="admin">Admin</option>
+                                        <option value="teacher">Nauczyciel</option>
+                                        <option value="student">Uczeń</option>
+
+
+
+                                    </select>
+
+
+
+                                </div>
+                            </div>
+
+{{--                            <div class="form-group row">--}}
+{{--                                <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Funkcja') }}</label>--}}
+
+{{--                                <div class="col-md-6">--}}
+{{--                                    <input id="role" type="text" class="form-control @error('role') is-invalid @enderror" name="role" value="{{ old('role') }}" required autocomplete="role" autofocus>--}}
+
+{{--                                    @error('role')--}}
+{{--                                    <span class="invalid-feedback" role="alert">--}}
+{{--                                        <strong>{{ $message }}</strong>--}}
+{{--                                    </span>--}}
+{{--                                    @enderror--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
 {{--                            <div class="input-group mb-3">--}}
 {{--                                <div class="input-group-prepend">--}}

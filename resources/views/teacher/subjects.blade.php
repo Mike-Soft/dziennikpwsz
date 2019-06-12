@@ -14,19 +14,30 @@
 
             <div class="card-body">
 
-                <div class="list-group list-group-flush">
+{{--                <div class="list-group list-group-flush">
 
- <?php $klasa = App\User::all()->where('clas_id', $class->id)?>
+ $klasa = App\User::all()->where('clas_id', $class->id)
 
-                   @foreach($klasa as $klas)
+                 @foreach($klasa as $klas)
 
                         <a href="" type="button" class="list-group-item list-group-item-action text-xl-center"><b>{{ $klas->surname }}</b></a>
 
-                    @endforeach
+                @endforeach--}}
+
+                <?php  $subject = App\Subject::all() ?>
+
+                @foreach($subject as $subjects)
+
+                    <a href="/{{ $class->id }}/{{ $subjects->name }}" type="button" class="list-group-item list-group-item-action text-xl-center"><b>{{ $subjects->name }}</b></a>
+
+                @endforeach
 
 
 
-                </div>
+
+
+
+{{--                </div>--}}
 
             </div>
 

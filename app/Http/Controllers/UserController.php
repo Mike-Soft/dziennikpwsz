@@ -57,14 +57,27 @@ class UserController extends Controller
 
             'password' => 'required'
 
-
         ]);
+
+        if($request->class)
+        {
+            $classname = (Clas::where('id', $request->class)->get(['name'])->first())->name;
+
+                    }
+        else{
+            $classname = "";
+                    };
+
+
+
         User::create([
+
+
 
            'name'=>$request->name,
             'surname'=>$request->surname,
             'role'=>$request->get('role'),
-            'class'=>$request->get('$class->name'),
+            'class'=>$classname,
             'email'=>$request->email,
             'parentmail'=>$request->parentmail,
             'password'=>Hash::make($request['password']),
@@ -113,18 +126,28 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-
+        if($request['class'])
+        {
+            $classname = Clas::where('id', $request->class)->get(['name'])->first();
+            $user->class = $classname->name;
+        }
+        else{
+            $user->class="";
+        }
 
         $user->name = $request['name'];
         $user->surname = $request['surname'];
         $user->role = $request['role'];
-        $user->class = $request['class'];
+
         $user->email = $request['email'];
         $user->parentmail = $request['parentmail'];
+
 
         if ($request['password']){
         $user->password = Hash::make($request['password']);
         }
+
+        $user->clas_id = $request['class'];
 
         $user->save();
 

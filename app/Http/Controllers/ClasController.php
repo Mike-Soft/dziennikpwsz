@@ -52,7 +52,7 @@ class ClasController extends Controller
     {
 
 
-        return view('teacher.subjects')->with('subjects', Subject::all() )->with('class', $class);
+        return view('teacher.subjects')->with('class', $class);
     }
 
     /**
