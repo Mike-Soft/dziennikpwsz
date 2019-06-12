@@ -45,14 +45,14 @@
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Zaloguj się') }}</a>
                         </li>
                         @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Zarejestruj się') }}</a>
-                            </li>
+{{--                            <li class="nav-item">--}}
+{{--                                <a class="nav-link" href="{{ route('register') }}">{{ __('Zarejestruj się') }}</a>--}}
+{{--                            </li>--}}
                         @endif
                     @else
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                                {{ Auth::user()->surname }} {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -67,6 +67,11 @@
                                 </form>
                             </div>
                         </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">{{ __('Wyloguj się') }}</a>
+                            </li>
                     @endguest
                 </ul>
             </div>
@@ -76,17 +81,18 @@
     <main class="py-4">
 
 
-        @if (auth()->user()->isAdmin()))
+        @if (auth()->user()->isAdmin())
 
         @yield('admincontent')
+
 
             @else
 
             <div class="container align-middle">
             <div class="alert-danger justify-content-lg-center">Nie masz uprawnień</div>
             </div>
+        @endif
 
-            @endif
     </main>
 </div>
 </body>

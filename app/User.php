@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','confirmpassword', 'surname', 'role', 'class', 'parentmail'
+        'name', 'email', 'password','confirmpassword', 'surname', 'role', 'class', 'parentmail', 'clas_id'
     ];
 
     /**
@@ -54,5 +54,10 @@ class User extends Authenticatable
 
         return $this->role == 'student';
 
+    }
+
+    public function clas()
+    {
+        return $this->belongsTo('App\Clas');
     }
 }

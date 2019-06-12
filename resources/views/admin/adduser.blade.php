@@ -56,26 +56,28 @@
 
 {{--                                </div>--}}
 
-{{--                            <div class="form-group row">--}}
-{{--                                <label for="class" class="col-md-4 col-form-label text-md-right">{{ __('Klasa') }}</label>--}}
+                            <?php  $classes= App\Clas::all()  ?>
 
-{{--                                <div class="col-md-6">--}}
-{{--                                    <select class="custom-select" id="class">--}}
-{{--                                        <option selected>wybierz</option>--}}
-{{--                                        <option value="">Nauczyciel</option>--}}
-{{--                                        <option value="1a">1a</option>--}}
-{{--                                        <option value="1b">1b</option>--}}
-{{--                                        <option value="2a">2a</option>--}}
-{{--                                        <option value="2b">2b</option>--}}
-{{--                                        <option value="3a">3a</option>--}}
-{{--                                        <option value="3b">3b</option>--}}
-{{--                                        <option value="4a">4a</option>--}}
-{{--                                        <option value="4b">4b</option>--}}
-{{--                                    </select>--}}
-{{--                                </div>--}}
+                            <div class="form-group">
+                                <label for="class" class="col-md-4 col-form-label text-md-right">{{ __('Klasa') }}</label>
 
 
-{{--                            </div>--}}
+                                    <select name="class" id="class" class="form-control" >
+
+                                        <option value="">Nauczyciel</option>
+                                        @foreach($classes as $class)
+
+
+
+                                        <option value="{{ $class->id }}">{{ $class->name }}</option>
+
+
+                                            @endforeach
+                                    </select>
+
+
+
+                            </div>
 
 
                             <div class="form-group row">
@@ -104,19 +106,19 @@
 {{--                                </select>--}}
 {{--                            </div>--}}
 
-                            <div class="form-group row">
-                                <label for="class" class="col-md-4 col-form-label text-md-right">{{ __('Klasa') }}</label>
+{{--                            <div class="form-group row">--}}
+{{--                                <label for="class" class="col-md-4 col-form-label text-md-right">{{ __('Klasa') }}</label>--}}
 
-                                <div class="col-md-6">
-                                    <input id="class" type="text" class="form-control @error('class') is-invalid @enderror" name="class" value="{{ old('class') }}"  autofocus>
+{{--                                <div class="col-md-6">--}}
+{{--                                    <input id="class" type="text" class="form-control @error('class') is-invalid @enderror" name="class" value="{{ old('class') }}"  autofocus>--}}
 
-                                    @error('class')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                            </div>
+{{--                                    @error('class')--}}
+{{--                                    <span class="invalid-feedback" role="alert">--}}
+{{--                                        <strong>{{ $message }}</strong>--}}
+{{--                                    </span>--}}
+{{--                                    @enderror--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
 
 

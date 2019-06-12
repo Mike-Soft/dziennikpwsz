@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Clas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
@@ -31,11 +32,11 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Clas $class)
     {
 
 
-    return view('admin.adduser');
+    return view('admin.adduser')->with('classes', $class);
 
     }
 
@@ -63,10 +64,11 @@ class UserController extends Controller
            'name'=>$request->name,
             'surname'=>$request->surname,
             'role'=>$request->get('role'),
-            'class'=>$request->get('class'),
+            'class'=>$request->get('$class->name'),
             'email'=>$request->email,
             'parentmail'=>$request->parentmail,
-            'password'=>Hash::make($request['password'])
+            'password'=>Hash::make($request['password']),
+            'clas_id'=>$request->class
 
 
 

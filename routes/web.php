@@ -23,3 +23,6 @@ Route::resource('users', 'UserController')->middleware('auth');
 Route::resource('grades', 'GradeController')->middleware('auth');
 
 Route::get('/users/{user}/delete', 'UserController@destroy')->middleware('auth');
+
+Route::resource('classes', 'ClasController')->middleware('auth');
+
