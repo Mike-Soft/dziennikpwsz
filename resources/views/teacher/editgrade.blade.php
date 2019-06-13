@@ -19,7 +19,7 @@
 
                             @php(
 
-                            $selname=1
+                            $selname=2
                             )
 
                             @foreach($marks as $mark)
