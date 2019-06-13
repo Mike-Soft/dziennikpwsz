@@ -28,7 +28,7 @@
 
                 @foreach($subject as $subjects)
 
-                    <a href="/{{ $class->id }}/{{ $subjects->name }}" type="button" class="list-group-item list-group-item-action text-xl-center"><b>{{ $subjects->name }}</b></a>
+                    <a href="/{{ $class->name }}/{{ $subjects->name }}" type="button" class="list-group-item list-group-item-action text-xl-center"><b>{{ $subjects->name }}</b></a>
 
                 @endforeach
 

@@ -60,4 +60,11 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Clas');
     }
+    public function subjects()
+    {
+
+        return $this->belongsToMany(Subject::class)->using('App\SubjectUser')->withPivot('mark');
+
+    }
+
 }

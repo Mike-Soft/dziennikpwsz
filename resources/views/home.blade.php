@@ -15,7 +15,12 @@
 
                         <div class="alert alert-dark text-center" role="alert">
                             <a href="{{ route('users.index') }}">Zarządzaj użytkownikami</a>
+
                         </div>
+                    <div class="alert alert-dark text-center" role="alert">
+                        <a href="{{ route('classes.index') }}">Przejdź do klas</a>
+
+                    </div>
                     @endif
 
                     @if(auth()->user()->isTeacher())

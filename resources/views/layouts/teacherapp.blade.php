@@ -81,7 +81,7 @@
     <main class="py-4">
 
 
-        @if (auth()->user()->isTeacher())
+        @if (auth()->user()->isTeacher() || auth()->user()->isAdmin())
 
         @yield('teachercontent')
 
