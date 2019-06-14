@@ -19,7 +19,7 @@
 
             <div class="card-header text-xl-center">
                 <div class="float-right">
-                <a href="/classes/{{ $users->first()->clas_id }}" class="btn btn-dark">Wróć do przedmiotów</a>
+                <a href="/classes/{{ $subid }}" class="btn btn-dark">Wróć do przedmiotów</a>
                 </div>
 
                 <div class="float-left">

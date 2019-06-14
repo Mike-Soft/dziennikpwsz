@@ -18,6 +18,6 @@ class SubjectController extends Controller
         $marks = DB::table('subject_user')->where('subject_id', $subs);
 //        $allusers = DB::table('users')->orderBy('surname')->get();
 
-        return view('teacher.clas')->with ('users', $users)->with('sub', $sub)->with('marks', $marks)->with('class', $class);
+        return view('teacher.clas')->with ('users', $users)->with('sub', $sub)->with('marks', $marks)->with('class', $class)->with('subid', $subs);
     }
 }
