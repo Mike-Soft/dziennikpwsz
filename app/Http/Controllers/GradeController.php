@@ -144,7 +144,10 @@ class GradeController extends Controller
         else{
             $subjectuser = SubjectUser::where('id', $request['grade'])->first();
 //            $subjectuser->id = $gradename->id;
-            $subjectuser->delete();
+
+            if($subjectuser!=null) {
+                $subjectuser->delete();
+            }
         }
 
 
