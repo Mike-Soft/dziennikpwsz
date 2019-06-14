@@ -26,13 +26,33 @@
                 @endfor
         </tr>
         <tr>
-
+            @php
+            $suma=0;
+            $liczba=0;
+            @endphp
             @foreach($marks as $mark)
                 @if($mark->subject_id==$subject->id)
                     <td class="text-center"><p class="text-danger m-1"><b>{{$mark->mark}}</b></p></td>
 
+                    @php
+                    $suma = $suma + $mark->mark;
+                    $liczba++
+
+
+                    @endphp
+
                 @endif
                 @endforeach
+        </tr>
+
+        <tr>
+
+            @if($liczba>0)
+
+                <td>Średnia: {{ round($suma/$liczba,2) }}</td>
+
+                @endif
+
         </tr>
 
         </tbody>

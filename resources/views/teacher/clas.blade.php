@@ -62,9 +62,10 @@
 
 
 
-{{--                                @php--}}
-{{--                                        $average=0--}}
-{{--                                @endphp--}}
+                                @php
+                                        $average=0;
+                                        $markscount=0
+                                @endphp
 
                                         @foreach($marks as $mark)
 
@@ -74,10 +75,12 @@
 
                                                 <td class="text-center">{{ $mark->mark }}</td>
 
+                                                @php
+                                                $average = $average + $mark->mark ;
+                                                $markscount++
+                                                @endphp
 
-
-
-                                                @endif
+                                    @endif
 
                                 @endforeach
                                 </tr>
@@ -119,21 +122,22 @@
                                                 <select name="note" id="note" class="form-control align-middle" >
                                                     <option selected value="">Ocena</option>
 
-                                                    <option value="1,0">1,0</option>
-                                                    <option value="1,5">1,5</option>
-                                                    <option value="1,75">1,75</option>
-                                                    <option value="2,0">2,0</option>
-                                                    <option value="2,5">2,5</option>
-                                                    <option value="2,75">2,75</option>
-                                                    <option value="3,0">3,0</option>
-                                                    <option value="3,5">3,5</option>
-                                                    <option value="3,75">3,75</option>
-                                                    <option value="4,0">4,0</option>
-                                                    <option value="4,5">4,5</option>
-                                                    <option value="4,75">4,75</option>
-                                                    <option value="5,0">5,0</option>
-                                                    <option value="5,5">5,5</option>
-                                                    <option value="5,75">5,75</option>
+                                                    <option value="1.0">1.0</option>
+                                                    <option value="1.5">1.5</option>
+                                                    <option value="1.75">1.75</option>
+                                                    <option value="2.0">2.0</option>
+                                                    <option value="2.5">2.5</option>
+                                                    <option value="2.75">2.75</option>
+                                                    <option value="3.0">3.0</option>
+                                                    <option value="3.5">3.5</option>
+                                                    <option value="3.75">3.75</option>
+                                                    <option value="4.0">4.0</option>
+                                                    <option value="4.5">4.5</option>
+                                                    <option value="4.75">4.75</option>
+                                                    <option value="5.0">5.0</option>
+                                                    <option value="5.5">5.5</option>
+                                                    <option value="5.75">5.75</option>
+                                                    <option value="6.0">6.0</option>
 
 
 
@@ -158,8 +162,10 @@
 {{--                                    @method('PUT')--}}
 
                                 <td class="text-center">
+                                @if($markscount>0)
+                                 <small>Średnia: {{ round($average/$markscount,2) }} </small>
 
-
+                                    @endif
 
                                 </td>
 
@@ -184,22 +190,22 @@
                                                 <select name="noteedit" id="noteedit" class=" btn-mini " style="margin: 1"  >
                                                     <option selected></option>
 
-                                                    <option value="1,0">1</option>
-                                                    <option value="1,5">1+</option>
-                                                    <option value="1,75">2-</option>
-                                                    <option value="2,0">2</option>
-                                                    <option value="2,5">2+</option>
-                                                    <option value="2,75">3-</option>
-                                                    <option value="3,0">3</option>
-                                                    <option value="3,5">3+</option>
-                                                    <option value="3,75">4-</option>
-                                                    <option value="4,0">4</option>
-                                                    <option value="4,5">4+</option>
-                                                    <option value="4,75">5-</option>
-                                                    <option value="5,0">5</option>
-                                                    <option value="5,5">5+</option>
-                                                    <option value="5,75">6-</option>
-                                                    <option value="6">6</option>
+                                                    <option value="1.0">1</option>
+                                                    <option value="1.5">1+</option>
+                                                    <option value="1.75">2-</option>
+                                                    <option value="2.0">2</option>
+                                                    <option value="2.5">2+</option>
+                                                    <option value="2.75">3-</option>
+                                                    <option value="3.0">3</option>
+                                                    <option value="3.5">3+</option>
+                                                    <option value="3.75">4-</option>
+                                                    <option value="4.0">4</option>
+                                                    <option value="4.5">4+</option>
+                                                    <option value="4.75">5-</option>
+                                                    <option value="5.0">5</option>
+                                                    <option value="5.5">5+</option>
+                                                    <option value="5.75">6-</option>
+                                                    <option value="6.0">6</option>
 
 
 

@@ -29,3 +29,5 @@ Route::resource('classes', 'ClasController')->middleware('auth');
 Route::get('/{class}/{subject}', 'SubjectController@index')->middleware('auth')->name('grades.view');
 
 Route::post('/grade/{user}/{subject}', 'GradeController@new')->name('grades.new');
+
+//Route::get('/{class}/users', 'ClasController@showall')->name('show.all');

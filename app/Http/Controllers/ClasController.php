@@ -26,9 +26,12 @@ class ClasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function showall()
     {
-        //
+        $students = DB::table('users')->where('class', $class)->get();
+        $subjects = DB::table('subjects')->all();
+
+        return view('teacher.clasusers',['students' => $students])->with('subjects', $subjects);
     }
 
     /**
