@@ -62,12 +62,12 @@
 
 
 
-                                @php
-                                       ((float)$average=0);
-                                @endphp
-                                @php
-                                        $markscount=0;
-                                @endphp
+{{--                                @php--}}
+{{--                                       ((float)$average=0);--}}
+{{--                                @endphp--}}
+{{--                                @php--}}
+{{--                                        $markscount=0;--}}
+{{--                                @endphp--}}
 
                                         @foreach($marks as $mark)
 
@@ -77,11 +77,11 @@
 
                                                 <td class="text-center">{{ $mark->mark }}</td>
 
-                                                @php
-                                                $markvalue = $mark->mark;
-                                                $average = $average + $markvalue;
-                                                $markscount++
-                                                @endphp
+{{--                                                @php--}}
+{{--                                                $markvalue = $mark->mark;--}}
+{{--                                                $average = $average + $markvalue;--}}
+{{--                                                $markscount++--}}
+{{--                                                @endphp--}}
 
                                     @endif
 
@@ -165,10 +165,10 @@
 {{--                                    @method('PUT')--}}
 
                                 <td class="text-center">
-                                @if($markscount>0)
-                                 <small>Średnia: {{ round($average/$markscount,2) }} </small>
+{{--                                @if($markscount>0)--}}
+{{--                                 <small>Średnia: {{ round($average/$markscount,2) }} </small>--}}
 
-                                    @endif
+{{--                                    @endif--}}
 
                                 </td>
 
