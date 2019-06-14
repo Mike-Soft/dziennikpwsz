@@ -9,7 +9,7 @@ class Subject extends Model
     public function classes()
     {
 
-        return $this->belongsToMany(User::class)->using('App\SubjectUser')->withPivot('mark');
+//        return $this->belongsToMany(User::class)->using('App\SubjectUser')->withPivot('mark');
 
     }
 }
