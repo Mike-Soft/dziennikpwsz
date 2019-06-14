@@ -124,8 +124,8 @@
                                 <div >
 
                                     <select name="class" id="class" class="form-control align-middle mb-4 col-md-7" >
-                                        <option selected value="{{ $user->class }}">{{ $user->class }}</option>
-                                        <option value="">Brak</option>
+                                        <option selected value="{{ $user->clas_id }}">{{ $user->class }}</option>
+                                        <option  value="">Brak</option>
                                         @foreach($classes as $class)
 
 
