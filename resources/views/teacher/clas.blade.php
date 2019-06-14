@@ -63,8 +63,10 @@
 
 
                                 @php
-                                       number_format($average=0, 2);
-                                        $markscount=0
+                                       ((float)$average=0);
+                                @endphp
+                                @php
+                                        $markscount=0;
                                 @endphp
 
                                         @foreach($marks as $mark)
@@ -77,7 +79,7 @@
 
                                                 @php
                                                 $markvalue = $mark->mark;
-                                                $average = $average + $markvalue ;
+                                                $average = $average + $markvalue;
                                                 $markscount++
                                                 @endphp
 
