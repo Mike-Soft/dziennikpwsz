@@ -63,7 +63,7 @@
 
 
                                 @php
-                                        $average=0;
+                                       number_format($average=0, 2);
                                         $markscount=0
                                 @endphp
 
