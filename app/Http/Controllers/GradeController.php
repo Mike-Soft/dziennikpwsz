@@ -73,6 +73,8 @@ class GradeController extends Controller
 
         $class=$request->class;
 
+
+
        return redirect(route('grades.view', ['class'=>$class, 'subject'=>$request->subname ]));
     }
 
@@ -82,9 +84,14 @@ class GradeController extends Controller
      * @param  \App\Grade  $grade
      * @return \Illuminate\Http\Response
      */
-    public function show(Grade $grade)
+    public function show($grade)
     {
-        //
+        $marks = DB::table('subject_user')->where(['user_id'=>$grade])->get();
+        $subjects = DB::table('subjects')->get();
+        $user = DB::table('users')->where('id', $grade)->first();
+
+
+        return view('student.overview')->with('studentid', $grade)->with('marks', $marks)->with('subjects', $subjects)->with('user', $user);
     }
 
     /**
@@ -108,31 +115,51 @@ class GradeController extends Controller
      * @param  \App\Grade  $grade
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $user, $subject, $mark, SubjectUser $subjectuser)
+    public function update(Request $request,  SubjectUser $subjectuser)
     {
-//        if($request['mark'])
-//        {
-//            $markid = SubjectUser::where('id', $request->mark)->get();
-//            $mark->id = $markid->id;
-//        }
-//        else{
-//            $subjectuser->delete();
-//        }s
-//
-//        $mark->mark= $request['mark'];
-//
-//        return redirect(route('grades.view', ['class'=>$user->class, 'subject'=>$subject ]));
-//
-//
-//
-//
-//
-//
-//
-//
-//        $user->save();
 
-        return redirect(route('users.index'));
+
+
+
+        if($request['noteedit'])
+        {
+            $subjectuser = SubjectUser::where('id', $request['grade'])->first();
+//            $subjectuser->id = $gradename->id;
+
+
+            $subjectuser->mark=$request['noteedit'];
+            $subjectuser->subject_id=$request['subject'];
+            $subjectuser->user_id=$request['user'];
+            $subjectuser->save();
+        }
+        else{
+            $subjectuser = SubjectUser::where('id', $request['grade'])->first();
+//            $subjectuser->id = $gradename->id;
+            $subjectuser->delete();
+        }
+
+
+        $users = DB::table('users')->orderBy('surname')->where('class', $request['class'])->get();
+        $sub = DB::table('subjects')->where('name', $request['subname'])->first();
+        $subs = DB::table('subjects')->where('name', $request['subname'])->first();
+        $marks = DB::table('subject_user')->where('subject_id', $request['subject'])->get();
+        $class=$request['class'];
+//        $allusers = DB::table('users')->orderBy('surname')->get();
+
+        return view('teacher.clas')->with ('users', $users)->with('sub', $sub)->with('marks', $marks)->with('class', $class);
+
+//        return redirect(route('grades.view', ['class'=>$requuser->class, 'subject'=>$subject ]));
+
+
+
+
+
+
+
+
+
+
+//        return redirect(route('users.index'));
     }
 
     /**

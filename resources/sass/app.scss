@@ -6,3 +6,16 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+select.btn-mini {
+
+  font-size: 5px;
+  line-height: 5px;
+  height: 5px;
+  width: 5px;
+
+}
+
+tr.maly {
+  height: 10px !important;
+}

@@ -7,7 +7,8 @@
                                 <div class="card card-default">
 
                                     <div class="card-header text-center">
-                                        Klasy
+                                        <div class="float-left "><b>Klasy</b></div>
+                                        <div><a href="/home" class="btn btn-dark float-right">Strona główna</a></div>
                                     </div>
 
                                     <div class="card-body">

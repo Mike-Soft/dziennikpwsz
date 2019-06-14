@@ -17,18 +17,27 @@
 
 
 
-            <div class="card-header text-xl-center"><b>Przedmiot: {{ $sub->name }} <br></br>Klasa {{ $users->first()->class }} </b></div>
+            <div class="card-header text-xl-center">
+                <div class="float-right">
+                <a href="/classes/{{ $users->first()->clas_id }}" class="btn btn-dark">Wróć do przedmiotów</a>
+                </div>
+
+                <div class="float-left">
+                <b>Przedmiot: {{ $sub->name }} <br></br>Klasa {{ $users->first()->class }} </b>
+                </div>
+
+            </div>
             <div class="card-body card-default">
 
-                <table class="table align-content-start table-fixed table-bordered">
+                <table class="table align-content-start table-fixed table-bordered pl-0">
                     <thead>
                     <tr>
-                        <th class="text-center" scope="col">l.p.</th>
-                        <th  class="text-center" scope="col">Nazwisko</th>
-                        <th class="text-center" scope="col">Imię</th>
+                        <th class="text-center" scope="col" style="width: 2%">l.p.</th>
+                        <th  class="text-center" scope="col" style="width: 20%">Nazwisko</th>
+                        <th class="text-center" scope="col" style="width: 8%">Imię</th>
 
-                        @for($i=1;$i<16;$i++)
-                        <th scope="col" class="text-center">{{$i}} </th>
+                        @for($i=1;$i<11;$i++)
+                        <th scope="col" class="text-center" style="width: 7%">{{$i}} </th>
 
                             @endfor
 
@@ -47,19 +56,26 @@
 
                             <tr>
                                 <th scope="row"  class="text-center">{{ $tab }}</th>
-                                <td class="text-center">{{ $user->surname }}</td>
-                                <td class="text-center">{{ $user->name }}</td>
-                                <td class="text-center">{{ $user->id }}</td>
+                                <td class="text-center"><b>{{ $user->surname }}</b></td>
+                                <td class="text-center"><b>{{ $user->name }}</b></td>
 
 
 
 
+{{--                                @php--}}
+{{--                                        $average=0--}}
+{{--                                @endphp--}}
 
                                         @foreach($marks as $mark)
+
+
 
                                             @if($mark->user_id == $user->id)
 
                                                 <td class="text-center">{{ $mark->mark }}</td>
+
+
+
 
                                                 @endif
 
@@ -80,18 +96,7 @@
                             <tr>
                                 <td></td>
 
-                                <td class="text-center">
-{{--                                    @if($user->email=='mtmpwsz@gmail.com')--}}
-{{--                                    @else--}}
 
-
-{{--                                        <a href="/users/{{ $user->id }}/delete"  class="btn btn-danger btn-sm float-right">Usuń</a>--}}
-
-{{--                                    @endif--}}
-
-                                    <a href="{{ route('grades.edit', [ 'grade'=>$user->name.$user->surname.$sub->name, 'user'=>$user->id, 'subject'=>$sub->id, 'username'=>$user->name, 'subjectname'=>$sub->name ]) }}"  class="btn btn-info  btn-sm align-content-center ">Edytuj</a>
-
-                                </td>
 
 
 
@@ -147,6 +152,73 @@
 
                                     </form>
                                 </td>
+
+{{--                                <form method="POST" class=" align-content-center" action="{{ route('grades.update', [ 'subject'=>$sub->id , 'subname'=>$sub->name,  'class'=> $users->first()->class])}}">--}}
+{{--                                    @csrf--}}
+{{--                                    @method('PUT')--}}
+
+                                <td class="text-center">
+
+
+
+                                </td>
+
+
+                                @foreach($marks as $mark)
+
+                                    @if($mark->user_id == $user->id)
+
+                                        <td class="text-center p-1 align-content-center">
+
+                                                <div class="p-0 m-0">
+
+                                            <form method="POST" class=" align-content-center" action="{{ route('grades.update', ['grade'=>$mark->id, 'user'=>$user->id, 'subject'=>$sub->id , 'subname'=>$sub->name,  'class'=> $users->first()->class])}}">
+                                                @csrf
+                                                @method('PUT')
+
+
+
+{{--                                            <input type="hidden" name="gradeid" value="{{$mark->id}}" >--}}
+{{--                                                <input type="hidden" name="userid" value="{{ $user->id }}" >--}}
+
+                                                <select name="noteedit" id="noteedit" class=" btn-mini " style="margin: 1"  >
+                                                    <option selected></option>
+
+                                                    <option value="1,0">1</option>
+                                                    <option value="1,5">1+</option>
+                                                    <option value="1,75">2-</option>
+                                                    <option value="2,0">2</option>
+                                                    <option value="2,5">2+</option>
+                                                    <option value="2,75">3-</option>
+                                                    <option value="3,0">3</option>
+                                                    <option value="3,5">3+</option>
+                                                    <option value="3,75">4-</option>
+                                                    <option value="4,0">4</option>
+                                                    <option value="4,5">4+</option>
+                                                    <option value="4,75">5-</option>
+                                                    <option value="5,0">5</option>
+                                                    <option value="5,5">5+</option>
+                                                    <option value="5,75">6-</option>
+                                                    <option value="6">6</option>
+
+
+
+
+                                                </select>
+
+
+                                                <button type="submit" class="btn btn-primary col-form-label-sm col-sm-1 btn-sm align-bottom"></button>
+
+                                            </form>
+            </div>
+                                        </td>
+
+                                    @endif
+
+                                @endforeach
+
+{{--                                </form>--}}
+
                             </tr>
 
                             @php

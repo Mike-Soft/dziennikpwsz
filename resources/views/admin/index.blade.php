@@ -6,6 +6,7 @@
     <div class="container">
 
         <div class="d-flex justify-content-start">
+            <a href="/home" class="btn btn-dark float-left">Powrót</a>
             <a href="{{ route('users.create') }}" class="btn btn-success float-left">Dodaj użytkownika</a>
         </div>
 

@@ -37,6 +37,22 @@
 
                             </div>
                         </div>
+                    @endif
+
+                        @if(auth()->user()->isStudent())
+
+
+                            <div class="container col-sm-4">
+
+                                <div class="card card-default">
+
+                                    <div class="card-header text-center">
+                                        <a href="{{ route('grades.show', ['grade'=>$user->id]  ) }}">Zobacz oceny</a>
+
+                                    </div>
+
+                                </div>
+                            </div>
 
 
 {{--                        <div class="container col-sm-4">--}}

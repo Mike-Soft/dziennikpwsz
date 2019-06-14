@@ -9,7 +9,12 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Edytuj użytkownika') }}</div>
+
+                    <div class="card-header">
+                    <div class="float-left">{{ __('Edytuj użytkownika') }}</div>
+                    <div> <a href="{{ route('users.index') }}" class=" btn btn-dark float-right">Powrót</a></div>
+
+                </div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('users.update', $user) }}">

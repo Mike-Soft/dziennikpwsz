@@ -9,7 +9,13 @@
         <div class="card card-default">
 
             <div class="card-header text-center">
-                Przedmioty
+
+                <div>
+                    <a href="{{ route('classes.index') }}" class="btn btn-dark float-right">Wróć do klas</a>
+                </div>
+
+                <div class="float-left align-content-start"><p><b>Przedmioty klasy {{ $class->name }}</b></p></div>
+
             </div>
 
             <div class="card-body">
