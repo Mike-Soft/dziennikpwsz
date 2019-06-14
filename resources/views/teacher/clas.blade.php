@@ -117,7 +117,7 @@
 {{--                                                <input type="hidden" value={{$sub->id}} name="subjectid">--}}
 {{--                                                <input type="text" class="form-control mb-2 w-25" id="note" name="note"  placeholder="Jane Doe">--}}
                                                 <select name="note" id="note" class="form-control align-middle" >
-                                                    <option selected>Ocena</option>
+                                                    <option selected value="">Ocena</option>
 
                                                     <option value="1,0">1,0</option>
                                                     <option value="1,5">1,5</option>

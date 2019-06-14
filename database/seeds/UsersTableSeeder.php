@@ -42,9 +42,9 @@ class UsersTableSeeder extends Seeder
 
 
         DB::table('users')->insert([
-            'name' => 'Marek',
-            'surname' => 'T',
-            'email' => 't@gmail.com',
+            'name' => 'Kleks',
+            'surname' => 'Profesor',
+            'email' => 'nauczyciel@gmail.com',
             'role' => 'teacher',
             'class' => '',
             'parentmail' => '',
@@ -54,8 +54,8 @@ class UsersTableSeeder extends Seeder
 
         DB::table('users')->insert([
             'name' => 'Paweł',
-            'surname' => 'T',
-            'email' => 'p@gmail.com',
+            'surname' => 'Torbielski',
+            'email' => 'student@gmail.com',
             'role' => 'student',
             'class' => '1a',
             'parentmail' => 'p@parentmail.com',

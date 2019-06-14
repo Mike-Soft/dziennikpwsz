@@ -56,26 +56,35 @@ class GradeController extends Controller
 //        else{
 //            $classname = "";
 //        };
-        Grade::create([
+        if($request->note) {
+
+            Grade::create([
 
 //        $grade->subject_id = $request['subjectid'];
 //        $grade->user_id = $request['userid'];
 //        $grade->mark = $request['note'];
 
-            'user_id'=>$request->user,
-            'subject_id'=>$request->subject,
-            'mark'=> $request->note,
+
+                'user_id' => $request->user,
+                'subject_id' => $request->subject,
+                'mark' => $request->note,
 
 //            $this->store()
 
 
-        ]);
+            ]);
 
-        $class=$request->class;
+            $class = $request->class;
 
 
+            return redirect(route('grades.view', ['class' => $class, 'subject' => $request->subname]));
 
-       return redirect(route('grades.view', ['class'=>$class, 'subject'=>$request->subname ]));
+        }
+
+        else{
+            $class = $request->class;
+            return redirect(route('grades.view', ['class' => $class, 'subject' => $request->subname]));
+        }
     }
 
     /**
