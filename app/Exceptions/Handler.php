@@ -19,6 +19,9 @@ class Handler extends ExceptionHandler
         \Illuminate\Database\Eloquent\ModelNotFoundException::class,
         \Illuminate\Foundation\Exceptions\Handler::class,
         \Illuminate\Validation\ValidationException::class,
+        \Illuminate\Foundation\Http\Kernel::class,
+        \Illuminate\Foundation\Bootstrap\HandleExceptions::class,
+        \ErrorException::class,
     ];
 
     /**
