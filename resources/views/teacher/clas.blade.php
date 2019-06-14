@@ -76,7 +76,8 @@
                                                 <td class="text-center">{{ $mark->mark }}</td>
 
                                                 @php
-                                                $average = $average + $mark->mark ;
+                                                $markvalue = $mark->mark;
+                                                $average = $average + $markvalue ;
                                                 $markscount++
                                                 @endphp
 
