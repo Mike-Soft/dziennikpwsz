@@ -16,7 +16,7 @@ class SubjectController extends Controller
         $users = DB::table('users')->orderBy('surname')->where('class', $class)->get();
         $sub = DB::table('subjects')->where('name', $subject)->first();
         $subs = DB::table('subjects')->where('name', $subject)->first();
-        dd($subs);
+
         $marks = DB::table('subject_user')->where('subject_id', $subs->id)->get();
 //        $allusers = DB::table('users')->orderBy('surname')->get();
 
