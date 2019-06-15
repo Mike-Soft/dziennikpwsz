@@ -15,18 +15,18 @@
 
         <div class="card card-default mt-lg-1">
 
-
+                {{$userss=$users->first()}}
 
             <div class="card-header text-xl-center">
                 <div class="float-right">
-                    @if($users)
-                <a href="/classes/{{ $users->first()->clas_id }}" class="btn btn-dark">Wróć do przedmiotów</a>
+                    @if($userss)
+                <a href="/classes/{{ $userss->clas_id }}" class="btn btn-dark">Wróć do przedmiotów</a>
                         @endif
                 </div>
 
                 <div class="float-left">
-                    @if($users)
-                <b>Przedmiot: {{ $sub->name }} <br></br>Klasa {{ $users->first()->class }} </b>
+                    @if($userss)
+                <b>Przedmiot: {{ $sub->name }} <br></br>Klasa {{ $userss->class }} </b>
                         @endif
                 </div>
 
