@@ -21,6 +21,11 @@
                         <a href="{{ route('classes.index') }}">Przejdź do klas</a>
 
                     </div>
+
+                    <div class="alert alert-dark text-center" role="alert">
+                        <a href="{{ route('user.search') }}">Przejdź do wyszukiwania danych opiekuna</a>
+
+                    </div>
                     @endif
 
                     @if(auth()->user()->isTeacher())
@@ -32,6 +37,11 @@
 
                                 <div class="card-header text-center">
                                     <a href="{{ route('classes.index') }}">Przejdź do klas</a>
+
+                                </div>
+
+                                <div class="alert alert-dark text-center" role="alert">
+                                    <a href="{{ route('user.search') }}">Przejdź do wyszukiwania danych opiekuna</a>
 
                                 </div>
 

@@ -30,4 +30,7 @@ Route::get('/{class}/{subject}', 'SubjectController@index')->middleware('auth')-
 
 Route::post('/grade/{user}/{subject}', 'GradeController@new')->name('grades.new');
 
+Route::get('/szukaj','SearchController@index')->middleware('auth')->name('user.search');
+Route::get('/search','SearchController@search')->middleware('auth');
+
 //Route::get('/{class}/users', 'ClasController@showall')->name('show.all');
