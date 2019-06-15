@@ -83,9 +83,9 @@
                 </div>
             @endif
 
-            <div class="content">
+            <div class="content col-sm-auto">
                 <div class="title m-b-md col-sm-auto">
-                    Dziennik elektroniczy<br>projekt studentów PWSZ
+                    <h6>Dziennik elektroniczny<br>projekt studentów PWSZ</h6>
                 </div>
 
 
