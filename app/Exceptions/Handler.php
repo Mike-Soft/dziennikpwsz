@@ -21,8 +21,9 @@ class Handler extends ExceptionHandler
         \Illuminate\Validation\ValidationException::class,
         \Illuminate\Foundation\Http\Kernel::class,
         \Illuminate\Foundation\Bootstrap\HandleExceptions::class,
-        \ErrorException::class,
         \Whoops\Handler\PrettyPageHandler::class,
+        \Illuminate\Routing\Exceptions::class,
+
     ];
 
     /**
