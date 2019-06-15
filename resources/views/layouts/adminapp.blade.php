@@ -11,6 +11,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script type="text/javascript" src="{{ URL::asset('assets/js/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('assets/js/bootstrap.min.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
