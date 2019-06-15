@@ -19,13 +19,13 @@
 
             <div class="card-header text-xl-center">
                 <div class="float-right">
-                    @if($userss)
+                    @if($userss!=null)
                 <a href="/classes/{{ $userss->clas_id }}" class="btn btn-dark">Wróć do przedmiotów</a>
                         @endif
                 </div>
 
                 <div class="float-left">
-                    @if($userss)
+                    @if($userss!=null)
                 <b>Przedmiot: {{ $sub->name }} <br></br>Klasa {{ $userss->class }} </b>
                         @endif
                 </div>
