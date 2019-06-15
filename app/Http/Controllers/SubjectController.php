@@ -19,16 +19,17 @@ class SubjectController extends Controller
             if($sub)
 
             {
+                $markss=$sub->id;
         $marks = DB::table('subject_user')->where('subject_id', $sub->id)->get();
 
             }
             else{
-
+                $markss=0;
                 $marks=0;
 
             }
 //        $allusers = DB::table('users')->orderBy('surname')->get();
 
-        return view('teacher.clas')->with ('users', $users)->with('sub', $sub)->with('marks', $marks)->with('class', $class)->with('subid', $sub->id);
+        return view('teacher.clas')->with ('users', $users)->with('sub', $sub)->with('marks', $marks)->with('class', $class)->with('subid', $markss);
     }
 }
